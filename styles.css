@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Estilos Generales y Variables
+   ========================================================================== */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-gradient: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    --text-color: #1f2937;
+    --text-muted: #4b5563;
+    --bg-color: #f3f4f6;
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: 2.5rem 1rem;
+}
+
+/* ==========================================================================
+   Encabezado (Header & Foto de Perfil)
+   ========================================================================== */
+header {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    background: var(--primary-gradient);
+    color: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.25), 0 8px 10px -6px rgba(30, 58, 138, 0.2);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.foto-perfil {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+.foto-perfil:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.header-info {
+    text-align: left;
+}
+
+header h1 {
+    font-size: 2.25rem;
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+}
+
+header h2 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #e0e7ff;
+}
+
+/* ==========================================================================
+   Contenido Principal y Secciones
+   ========================================================================== */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Tarjetas de Sección */
+section {
+    background-color: var(--card-bg);
+    padding: 1.75rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+section hr {
+    display: none; /* Reemplazado por el diseño visual de tarjetas limpias */
+}
+
+section h3 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-bottom: 0.4rem;
+}
+
+section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 36px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+section p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Contacto */
+#contacto p {
+    margin-bottom: 0.4rem;
+}
+
+#contacto p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Diseño Adaptativo (Responsive)
+   ========================================================================== */
+@media (max-width: 640px) {
+    body {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.25rem;
+    }
+
+    .header-info {
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    section {
+        padding: 1.25rem 1.5rem;
+    }
+}
